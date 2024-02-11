@@ -9,6 +9,14 @@ import random
 from statistics import mean, median, mode
 
 scoreboard = []
+
+def stats():
+  score_mean = mean(scoreboard)
+  score_median = median(scoreboard)
+  score_mode = mode(scoreboard)
+  print(f"Mean of your attempts: {score_mean}")
+  print(f"Median of your attempts: {score_median}")
+  print(f"Mode of your attempts: {score_mode}")
 # Create the start_game function.
 # Write your code inside this function.
 def intro():
