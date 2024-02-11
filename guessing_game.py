@@ -8,6 +8,7 @@ Project 1 - A Number Guessing Game
 import random
 from statistics import mean, median, mode
 
+scoreboard = []
 # Create the start_game function.
 # Write your code inside this function.
 def intro():
@@ -16,6 +17,7 @@ def intro():
 def start_game():
   print("Instructions: Guess a number between 1 and 100!")
   answer = random.randint(1, 100)
+  attempts = 0
 
 #   When the program starts, we want to:
 #   ------------------------------------
@@ -28,6 +30,7 @@ def start_game():
 while True:
     try:
       guess = int(input("Enter your guess: "))
+      attempts += 1
       if guess > 100:
         raise ValueError("Guess has to be a number between 1 and 100")
       elif guess < 1:
@@ -44,6 +47,9 @@ while True:
         print("It's lower.")
       elif guess < answer:
         print("It's higher.")
+
+print(f"It took you {attempts} attempts.")
+scoreboard.append(attempts)
 #   5. Display the following data to the player
 #     a. How many attempts it took them to get the correct number in this game
 #     b. The mean of the saved attempts list
