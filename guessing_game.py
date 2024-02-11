@@ -17,6 +17,10 @@ def stats():
   print(f"Mean of your attempts: {score_mean}")
   print(f"Median of your attempts: {score_median}")
   print(f"Mode of your attempts: {score_mode}")
+
+def highscore():
+    score_min = min(scoreboard)
+    print(f"Highscore: {score_min}")
 # Create the start_game function.
 # Write your code inside this function.
 def intro():
@@ -66,6 +70,18 @@ scoreboard.append(attempts)
 #   6. Prompt the player to play again
 #     a. If they decide to play again, start the game loop over.
 #     b. If they decide to quit, show them a goodbye message.
+new_game = input("Would you like to play again? (Y/N)  ").upper()
+  if new_game == "Y":
+    highscore()    
+    start_game()
+  elif new_game == "N":
+    print("Thank you for playing!")
+    stats()
+    
+    
+
+intro()
+start_game()
 
 # ( You can add more features/enhancements if you'd like to. )
 
