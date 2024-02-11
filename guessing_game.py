@@ -5,6 +5,8 @@ Project 1 - A Number Guessing Game
 """
 
 # Import the random and statistics modules.
+import random
+from statistics import mean, median, mode
 
 # Create the start_game function.
 # Write your code inside this function.
