@@ -15,7 +15,7 @@ def intro():
 
 def start_game():
   print("Instructions: Guess a number between 1 and 100!")
-  
+  answer = random.randint(1, 100)
 
 #   When the program starts, we want to:
 #   ------------------------------------
