@@ -10,6 +10,12 @@ from statistics import mean, median, mode
 
 # Create the start_game function.
 # Write your code inside this function.
+def intro():
+  print("Welcome to \"Can You Guess the Number?\"")
+
+def start_game():
+  print("Instructions: Guess a number between 1 and 100!")
+  
 
 #   When the program starts, we want to:
 #   ------------------------------------
