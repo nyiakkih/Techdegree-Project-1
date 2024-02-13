@@ -31,24 +31,28 @@ def start_game():
 
     while True:
         try:
-          guess = int(input("Enter your guess: "))
-          attempts += 1
-          if guess > 100:
-            raise ValueError("Guess has to be a number between 1 and 100")
-          elif guess < 1:
-            raise ValueError("Guess has to be a number between 1 and 100")
+            guess = int(input("Enter your guess: "))
+            attempts += 1
+            if guess > 100 or guess < 1:
+                raise ValueError("Try entering a number between 1 and 100.")
             
         except ValueError as err:
-          print("That is not a valid value, try again.")
-          
+            if "invalid literal for int()" in str(err):
+                print("That is not a valid number. Please enter a number between 1 and 100.")
+            else:
+                print(err)
+            continue   
+            
         else:
-          if guess == answer:
-            print("You got it!")
-            break
-          elif guess > answer:
-            print("It's lower.")
-          elif guess < answer:
-            print("It's higher.")
+            if guess == answer:
+                print("You got it!")
+                break
+            elif guess > answer:
+                print("It's lower.")
+                continue
+            elif guess < answer:
+                print("It's higher.")
+                continue
 
     print(f"It took you {attempts} attempts.")
     scoreboard.append(attempts)
